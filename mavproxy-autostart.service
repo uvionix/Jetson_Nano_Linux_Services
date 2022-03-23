@@ -7,10 +7,9 @@ StartLimitIntervalSec=0
 
 [Service]
 Type=simple
-User=xoss
 EnvironmentFile=/etc/default/mavproxy-setup
 ExecStartPre=
-ExecStart=/usr/local/bin/mavproxy.py --master ${DEVICE} --baudrate ${DEVICE_BAUD} --out=tcpin:${TCP_ADDR}:${TCP_PORT} --out localhost:${LOCAL_PORT} --cmd="set flushlogs True" --state-basedir="/home/xoss/" --daemon
+ExecStart=/usr/local/bin/mavproxy.py --master ${DEVICE} --baudrate ${DEVICE_BAUD} --out=tcpin:${TCP_ADDR}:${TCP_PORT} --out localhost:${LOCAL_PORT} --cmd="set flushlogs True" --state-basedir="/home/" --daemon
 ExecStartPost=
 ExecStop=
 ExecReload=
