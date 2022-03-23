@@ -1,0 +1,19 @@
+[Unit]
+Description=Network watchdog autostart upon system boot
+After=networking.service
+StartLimitIntervalSec=0
+
+[Service]
+Type=simple
+EnvironmentFile=
+ExecStartPre=
+ExecStart=/usr/local/bin/network-watchdog.sh
+ExecStartPost=
+ExecStop=
+ExecReload=
+Restart=on-failure
+RestartSec=2
+
+[Install]
+WantedBy=multi-user.target
+

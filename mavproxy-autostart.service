@@ -1,0 +1,21 @@
+[Unit]
+Description=MAVProxy autostart upon system boot
+After=network.target
+After=systemd-user-sessions.service
+After=network-online.target
+StartLimitIntervalSec=0
+
+[Service]
+Type=simple
+User=xoss
+EnvironmentFile=/etc/default/mavproxy-setup
+ExecStartPre=
+ExecStart=/usr/local/bin/mavproxy.py --master ${DEVICE} --baudrate ${DEVICE_BAUD} --out=tcpin:${TCP_ADDR}:${TCP_PORT} --out localhost:${LOCAL_PORT} --cmd="set flushlogs True" --state-basedir="/home/xoss/" --daemon
+ExecStartPost=
+ExecStop=
+ExecReload=
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
+
