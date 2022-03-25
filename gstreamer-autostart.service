@@ -1,0 +1,19 @@
+[Unit]
+Description=GStreamer startup service
+After=network.target
+After=systemd-user-sessions.service
+After=network-online.target
+StartLimitIntervalSec=0
+
+[Service]
+Type=simple
+EnvironmentFile=/etc/default/gstreamer-setup
+ExecStartPre=
+ExecStart=/usr/bin/gst-launch-1.0 v4l2src device=/dev/video0 ! decodebin ! videoconvert ! jpegenc ! rtpjpegpay ! udpsink host=${HOST_IP_ADDR} port=${HOST_PORT}
+ExecStartPost=
+ExecStop=
+ExecReload=
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
