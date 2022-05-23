@@ -9,7 +9,7 @@ StartLimitIntervalSec=0
 Type=simple
 EnvironmentFile=/etc/default/gstreamer-setup
 ExecStartPre=
-ExecStart=/usr/bin/gst-launch-1.0 v4l2src device=/dev/video0 ! decodebin ! videoconvert ! jpegenc ! rtpjpegpay ! udpsink host=${HOST_IP_ADDR} port=${HOST_PORT}
+ExecStart=/usr/bin/gst-launch-1.0 v4l2src device=/dev/video0 ! decodebin ! videoconvert ! videoscale ! video/x-raw,width=${WIDTH},height=${HEIGHT} ! x264enc tune=zerolatency ! rtph264pay ! udpsink host=${HOST_IP_ADDR} port=${HOST_PORT}
 ExecStartPost=
 ExecStop=
 ExecReload=
