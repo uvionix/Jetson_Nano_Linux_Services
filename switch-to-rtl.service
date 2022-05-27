@@ -1,0 +1,18 @@
+[Unit]
+Description=Switch to RTL service after a defined timeout
+After=networking.service
+StartLimitIntervalSec=0
+
+[Service]
+Type=simple
+EnvironmentFile=/etc/default/switch-to-rtl-setup
+ExecStartPre=
+ExecStart=/usr/local/bin/switch-to-rtl.sh ${TIMOUT}
+ExecStartPost=
+ExecStop=
+ExecReload=
+Restart=on-failure
+RestartSec=2
+
+[Install]
+WantedBy=multi-user.target
