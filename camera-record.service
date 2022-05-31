@@ -1,0 +1,18 @@
+[Unit]
+Description=Camera recording service
+After=networking.service
+StartLimitIntervalSec=0
+
+[Service]
+Type=simple
+EnvironmentFile=/etc/default/camera-record-setup
+ExecStartPre=
+ExecStart=/usr/local/bin/camera-start-recording.sh ${FPS} ${RESOLUTION} /dev/video0
+ExecStartPost=
+ExecStop=
+ExecReload=
+Restart=on-failure
+RestartSec=2
+
+[Install]
+WantedBy=multi-user.target
