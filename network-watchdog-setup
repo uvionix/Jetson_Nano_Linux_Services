@@ -1,0 +1,4 @@
+# Setup file for the network watchdog service
+LOG_FILE=/var/log/uvx-network-watchdog.log
+LTE_MANUFACTURER_NAME=U-Blox
+WIFI_INTERFACE_NAME=wlan0
