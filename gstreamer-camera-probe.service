@@ -1,0 +1,17 @@
+[Unit]
+Description=Camera probe service using gstreamer pipeline
+After=networking.service
+StartLimitIntervalSec=0
+
+[Service]
+Type=simple
+EnvironmentFile=
+ExecStartPre=
+ExecStart=/usr/local/bin/gstreamer-camera-probe.sh
+ExecStartPost=
+ExecStop=
+ExecReload=
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
