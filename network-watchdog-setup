@@ -2,6 +2,7 @@
 LOG_FILE=/var/log/xoss-network-watchdog
 LOG_HISTORY_DIR=/var/log/xoss/nw/
 LOG_HISTORY_FILEPATH_CONTAINER=/etc/default/xoss-current-log-history-file
+VEHICLE_ARMED_DISARMED_STATUS_FILE=/etc/default/xoss-armed-status
 LTE_MANUFACTURER_NAME=U-Blox
 WIFI_INTERFACE_NAME=wlan0
 WIFI_DISABLE_GPIO_OFFSET=66
