@@ -14,7 +14,7 @@ ExecStartPost=
 ExecStop=
 ExecReload=/usr/bin/killall -2 gst-launch-1.0
 Restart=on-failure
-RestartSec=3
+RestartSec=7
 
 [Install]
 WantedBy=multi-user.target
