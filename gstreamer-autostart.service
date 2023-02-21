@@ -12,9 +12,9 @@ ExecStartPre=
 ExecStart=/usr/local/bin/gstreamer-start.sh
 ExecStartPost=
 ExecStop=
-ExecReload=/usr/bin/killall -2 gst-launch-1.0
+ExecReload=
 Restart=on-failure
-RestartSec=7
+RestartSec=2
 
 [Install]
 WantedBy=multi-user.target
