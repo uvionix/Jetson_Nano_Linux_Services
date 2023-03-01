@@ -6,7 +6,7 @@ StartLimitIntervalSec=0
 [Service]
 Type=simple
 EnvironmentFile=/etc/default/mavproxy-setup
-ExecStart=/usr/local/bin/update-uav-status.py ${LOCAL_PORT} ${DEVICE_BAUD} --daemon
+ExecStart=/usr/local/bin/update-uav-status.py ${LOCAL_PORT_UAVSTATUS} ${DEVICE_BAUD} --daemon
 Restart=on-failure
 
 [Install]
