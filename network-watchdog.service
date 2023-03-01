@@ -1,6 +1,9 @@
 [Unit]
 Description=Network watchdog autostart upon system boot
 After=networking.service
+After=network.target
+After=systemd-user-sessions.service
+After=network-online.target
 StartLimitIntervalSec=0
 
 [Service]
