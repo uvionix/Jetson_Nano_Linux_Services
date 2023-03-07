@@ -1,12 +1,16 @@
 # Setup file for the network watchdog service
-LOG_FILE=/var/log/xoss-network-watchdog
-LOG_HISTORY_DIR=/var/log/xoss/nw/
-LOG_HISTORY_FILEPATH_CONTAINER=/etc/default/xoss-current-log-history-file
-VEHICLE_ARMED_DISARMED_STATUS_FILE=/etc/default/xoss-armed-status
-LTE_MANUFACTURER_NAME=U-Blox
-WIFI_INTERFACE_NAME=wlan0
+LOG_FILE="/var/log/xoss-network-watchdog"
+LOG_HISTORY_DIR="/var/log/xoss/nw/"
+LOG_HISTORY_FILEPATH_CONTAINER="/var/log/xoss-current-log-history-file"
+WEBPAGE_NW_LOG_FILE="/var/www/html/network-watchdog"
+LTE_MANUFACTURER_NAME="U-Blox"
+WIFI_INTERFACE_NAME="wlan0"
+LTE_INTERFACE_NAME="usb1"
+LTE_INTERFACE_NAME_ALT="usb0"
+VPN_INTERFACE_NAME="tun0"
 WIFI_DISABLE_GPIO_OFFSET=66
 DISABLE_WIFI_IF_LTE_NETWORK_IS_SELECTED=1
-AUTO_SWITCH_TO_LOITER=0
-AUTO_SWITCH_TO_RTL=0
+AUTO_SWITCH_TO_LOITER=1
+AUTO_SWITCH_TO_RTL=1
 SET_MAX_CPU_GPU_EMC_CLOCKS=1
+SAMPLING_PERIOD_SEC=2

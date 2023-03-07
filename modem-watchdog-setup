@@ -1,7 +1,9 @@
 # Setup file for the modem watchdog service
-LOG_FILE=/var/log/xoss-modem-watchdog
+LOG_FILE="/var/log/xoss-modem-watchdog"
+WEBPAGE_MW_LOG_FILE="/var/www/html/modem-watchdog"
+WEBPAGE_MW_STATUS_FILE="/var/www/html/modem-latest-status"
 PWR_EN_GPIO_OFFSET=64
-PWR_ON_OFF_I2C_BUS_IDENTIFIER=i2c-6-mux
+PWR_ON_OFF_I2C_BUS_IDENTIFIER="i2c-6-mux"
 SERVICE_START_DELAY_SEC=10
 PWR_ON_DELAY_SEC=17
 WAIT_AFTER_PWR_ON_SEC=11

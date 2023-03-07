@@ -7,7 +7,7 @@ StartLimitIntervalSec=0
 
 [Service]
 Type=simple
-EnvironmentFile=
+EnvironmentFile=/etc/default/gstreamer-setup
 ExecStartPre=
 ExecStart=/usr/local/bin/gstreamer-start.sh
 ExecStartPost=

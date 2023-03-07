@@ -5,7 +5,7 @@ StartLimitIntervalSec=0
 
 [Service]
 Type=simple
-EnvironmentFile=
+EnvironmentFile=/etc/default/modem-watchdog-setup
 ExecStartPre=
 ExecStart=/usr/local/bin/modem-watchdog.sh
 ExecStartPost=

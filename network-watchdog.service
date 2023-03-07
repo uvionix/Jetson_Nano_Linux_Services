@@ -8,7 +8,7 @@ StartLimitIntervalSec=0
 
 [Service]
 Type=simple
-EnvironmentFile=
+EnvironmentFile=/etc/default/network-watchdog-setup
 ExecStartPre=
 ExecStart=/usr/local/bin/network-watchdog.sh
 ExecStartPost=

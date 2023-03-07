@@ -1,5 +1,5 @@
 [Unit]
-Description=MAVProxy autostart upon system boot
+Description=MAVProxy startup service
 After=network.target
 After=systemd-user-sessions.service
 After=network-online.target
@@ -15,6 +15,7 @@ ExecStartPost=
 ExecStop=
 ExecReload=
 Restart=on-failure
+RestartSec=2
 
 [Install]
 WantedBy=multi-user.target

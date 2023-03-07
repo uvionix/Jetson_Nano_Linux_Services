@@ -5,13 +5,14 @@ StartLimitIntervalSec=0
 
 [Service]
 Type=simple
-EnvironmentFile=
+EnvironmentFile=/etc/default/gstreamer-setup
 ExecStartPre=
 ExecStart=/usr/local/bin/gstreamer-camera-probe.sh
 ExecStartPost=
 ExecStop=
 ExecReload=
 Restart=on-failure
+RestartSec=2
 
 [Install]
 WantedBy=multi-user.target
