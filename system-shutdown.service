@@ -1,0 +1,13 @@
+[Unit]
+Description=System shutdown service
+After=networking.service
+StartLimitIntervalSec=0
+
+[Service]
+Type=simple
+EnvironmentFile=
+ExecStart=/usr/local/bin/system-shutdown.sh
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target

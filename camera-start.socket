@@ -1,0 +1,12 @@
+[Unit]
+Description=Camera socket
+After=network.target
+After=systemd-user-sessions.service
+After=network-online.target
+
+[Socket]
+ListenStream=6001
+Accept=yes
+
+[Install]
+WantedBy=sockets.target

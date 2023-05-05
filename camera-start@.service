@@ -1,12 +1,10 @@
 [Unit]
-Description=GStreamer startup service
-After=network.target
-After=systemd-user-sessions.service
-After=network-online.target
+Description=Camera start service invoked by socket traffic
 StartLimitIntervalSec=0
 
 [Service]
 Type=simple
+StandardInput=socket
 EnvironmentFile=/etc/default/gstreamer-setup
 ExecStartPre=
 ExecStart=/usr/local/bin/gstreamer-start.sh
