@@ -10,7 +10,7 @@ Type=simple
 User=%u
 EnvironmentFile=/etc/default/mavproxy-setup
 ExecStartPre=
-ExecStart=/usr/local/bin/mavproxy.py --master ${DEVICE} --baudrate ${DEVICE_BAUD} --out=tcpin:${TCP_ADDR}:${TCP_PORT} --out localhost:${LOCAL_PORT_CHMOD} --out localhost:${LOCAL_PORT_UAVSTATUS} --cmd="set flushlogs True" --state-basedir="/home/%u/" --daemon
+ExecStart=/usr/local/bin/mavproxy.py --master ${DEVICE} --baudrate ${DEVICE_BAUD} --out=tcpin:${TCP_ADDR}:${TCP_PORT} --out localhost:${LOCAL_PORT_UAVSTATUS} --cmd="set flushlogs True" --state-basedir="/home/%u/" --daemon
 ExecStartPost=
 ExecStop=
 ExecReload=
